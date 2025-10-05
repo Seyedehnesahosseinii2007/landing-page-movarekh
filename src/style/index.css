@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    overflow-x: hidden;
+}
+
+section {
+    width: 100%;
+    min-height: 100vh;
+    /* ✅ حداقل ارتفاع، نه ارتفاع ثابت */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* تا متن‌ها زیر هم باشن */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    /* افکت پارالاکس جذاب */
+    padding: 50px 20px;
+    /* برای فاصله از بالا و پایین */
+}
+
+.bg1 {
+    background-image: url('../src/images/1.png');
+}
+
+.bg2 {
+    background-image: url('2.png');
+}
+
+.bg3 {
+    background-image: url('3.png');
+}
+
+h2 {
+    font-size: 2rem;
+    margin: 10px 0;
+}
