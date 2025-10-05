@@ -8,5 +8,8 @@
   "keywords": [],
   "author": "Seyedeh Nesa Hosseini",
   "license": "ISC",
-  "description": "minimal landing page for movarekh.ae section global partnership"
+  "description": "minimal landing page for movarekh.ae section global partnership",
+  "dependencies": {
+    "flag-icons": "^7.5.0"
+  }
 }

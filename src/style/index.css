@@ -2,45 +2,1772 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Geologica", sans-serif;
+    direction: ltr;
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Geologica", sans-serif;
     color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
     overflow-x: hidden;
+    direction: ltr;
 }
 
 section {
     width: 100%;
     min-height: 100vh;
-    /* ✅ حداقل ارتفاع، نه ارتفاع ثابت */
+
     display: flex;
-    justify-content: center;
-    align-items: center;
+
+
     flex-direction: column;
-    /* تا متن‌ها زیر هم باشن */
+
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    /* افکت پارالاکس جذاب */
+
     padding: 50px 20px;
-    /* برای فاصله از بالا و پایین */
+
 }
 
+/* each picture for background */
 .bg1 {
-    background-image: url('../src/images/1.png');
+    background-image: url('../images/1.png');
+
+
+    hr {
+        width: 50%;
+        margin: 30px auto;
+        animation-duration: 4s;
+        animation-name: moveInTopTwo;
+        backface-visibility: hidden;
+    }
 }
 
 .bg2 {
-    background-image: url('2.png');
+    background-image: url('../images/2.png');
+
+    h2 {
+        display: inline-block;
+        text-align: center;
+        font-size: 4rem;
+        border-bottom: 4px solid white;
+        margin: 0 auto;
+        /* وسط‌چین کل h2 */
+    }
 }
 
 .bg3 {
-    background-image: url('3.png');
+    background-image: url('../images/3.png');
+
+    .title-container {
+        display: flex;
+        justify-content: flex-end;
+        opacity: 0;
+        transform: translateX(100px);
+        transition: all 3s ease;
+        padding: 50px;
+
+        padding: 5%;
+    }
+
+    .title-container.in-view {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    hr {
+        width: 45%;
+
+    }
+
+    strong {
+        font-weight: 200;
+    }
+
+    a {
+        text-decoration: none;
+        /* حذف خط زیر لینک */
+        color: #ffffff;
+        font-weight: 200;
+        font-weight: bold;
+        /* اختیاری: پررنگ */
+        transition: color 0.3s ease;
+        /* انیمیشن تغییر رنگ هنگام هاور */
+        cursor: pointer;
+    }
+
+    a:hover {
+        color: #ffcc00;
+        /* رنگ هنگام هاور */
+    }
+
+    h2 {
+        display: inline-block;
+        text-align: left;
+
+        font-size: 4rem;
+        border-bottom: 4px solid white;
+        color: white;
+        margin: 0;
+    }
+
+    .location,
+    .phonenumber,
+    .email,
+    .website {
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .detail-form {
+        opacity: 0;
+        transform: translateX(-50px);
+        transition: all 3s ease;
+        padding: 50px;
+    }
+
+    .detail-form.in-view {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
-h2 {
-    font-size: 2rem;
-    margin: 10px 0;
+/* title  */
+.title-united-arab {
+    font-size: 3rem;
+    margin: 20px 0;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    justify-content: flex-end;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+    animation-duration: 3s;
+    animation-name: moveInTop;
+    backface-visibility: hidden;
+
+    h2 {
+        font-size: 2rem;
+        margin: 10px 0;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        font-family: "Geologica", sans-serif;
+    }
+
+    .fi {
+        font-size: 2.5rem;
+        margin: 10px 0;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+}
+
+@keyframes moveInTop {
+    0% {
+        opacity: 0;
+        transform: translateY(-100px);
+        /* starts 100px above and invisible */
+    }
+
+    80% {
+
+        /* midway through, letters spread out */
+        transform: translateY(50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        /* ends fully visible at the original position */
+    }
+}
+
+/* for main text  */
+.movarekh-computers {
+    display: block;
+    text-align: center;
+    margin-top: 100px;
+    font-size: 1.5rem;
+    font-family: "Geologica", sans-serif;
+    animation-duration: 4s;
+    animation-name: moveInTopTwo;
+    backface-visibility: hidden;
+}
+
+@keyframes moveInTopTwo {
+    0% {
+        opacity: 0;
+        transform: translateY(-100px);
+        /* starts 100px above and invisible */
+    }
+
+    80% {
+        letter-spacing: 2px;
+        /* midway through, letters spread out */
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        /* ends fully visible at the original position */
+    }
+}
+
+.main-texts {
+
+    padding: 2rem;
+    width: 55%;
+    margin: 2rem auto;
+    border-radius: 10px;
+    line-height: 1.8;
+    font-size: 1.5rem;
+    font-family: "Segoe UI", sans-serif;
+    text-align: justify;
+    text-transform: capitalize;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.692);
+    animation-duration: 3s;
+    animation-name: moveInDown;
+    backface-visibility: hidden;
+}
+
+@keyframes moveInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+        /* starts 100px above and invisible */
+    }
+
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        /* ends fully visible at the original position */
+    }
+}
+
+.bullet-texts {
+    background-color: rgba(255, 255, 255, 0.418);
+    border: 10px solid white;
+    padding: 80px;
+    width: 23%;
+    height: 410px;
+    display: flex;
+    justify-content: center;
+    /* وسط افقی */
+    align-items: center;
+    /* وسط عمودی */
+    font-size: 1.5rem;
+    border-radius: 50%;
+    color: rgb(41, 41, 41);
+    margin-top: 100px;
+
+
+}
+
+.people-one {
+    background-color: rgba(255, 255, 255, 0.418);
+    border: 10px solid white;
+    padding: 80px;
+    width: 23%;
+    height: 410px;
+    display: flex;
+    justify-content: center;
+    /* وسط افقی */
+    flex-direction: column;
+    align-self: center;
+    align-items: center;
+    /* وسط عمودی */
+    font-size: 1.25rem;
+    border-radius: 50%;
+    color: rgb(41, 41, 41);
+    margin-top: 150px;
+    gap: 30px;
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: all 2s ease;
+    padding: 50px;
+
+    strong {
+        text-align: center;
+        color: white;
+
+    }
+
+}
+
+.people-one.in-view {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.people-two {
+    background-color: rgba(255, 255, 255, 0.418);
+    border: 10px solid white;
+    padding: 80px;
+    width: 23%;
+    height: 410px;
+    display: flex;
+    justify-content: center;
+    /* وسط افقی */
+    flex-direction: column;
+    align-self: center;
+    align-items: center;
+    /* وسط عمودی */
+    font-size: 1.25rem;
+    border-radius: 50%;
+    color: rgb(41, 41, 41);
+    margin-top: 150px;
+    gap: 30px;
+    opacity: 0;
+    transform: translateX(100px);
+    transition: all 2s ease;
+    padding: 50px;
+
+    strong {
+        text-align: center;
+        color: white;
+
+    }
+
+}
+
+.people-two.in-view {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.main-texts-management {
+
+    padding: 2rem;
+    width: 55%;
+    margin: 2rem auto;
+    border-radius: 10px;
+    line-height: 1.8;
+    font-size: 1.5rem;
+    font-family: "Segoe UI", sans-serif;
+    text-align: justify;
+    text-transform: capitalize;
+    font-weight: bold;
+    animation-duration: 3s;
+    animation-name: moveInDown;
+    backface-visibility: hidden;
+    margin-top: 100px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 100px;
+
+    svg {
+        font-weight: bold;
+    }
+}
+
+@keyframes moveInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* start responsive in mobiloe */
+@media screen and (max-width:576px) {
+
+    /* title  */
+    .title-united-arab {
+        font-size: 3rem;
+        margin: 20px 0;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        display: flex;
+        flex-direction: row;
+        gap: 15px;
+        justify-content: flex-end;
+        text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+        animation-duration: 3s;
+        animation-name: moveInTop;
+        backface-visibility: hidden;
+
+        h2 {
+            font-size: 1.5rem;
+            margin: 10px 0;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-family: "Geologica", sans-serif;
+        }
+
+        .fi {
+            font-size: 2.75rem;
+            margin: 10px 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+    }
+
+    /* for main text  */
+    .movarekh-computers {
+        display: block;
+        text-align: center;
+        margin-top: 25px;
+        font-size: 1rem;
+        font-family: "Geologica", sans-serif;
+        animation-duration: 4s;
+        animation-name: moveInTopTwo;
+        backface-visibility: hidden;
+    }
+
+    /* each picture for background */
+    .bg1 {
+        background-image: url('../images/1.png');
+
+
+        hr {
+            width: 100%;
+            margin: 30px auto;
+            animation-duration: 4s;
+            animation-name: moveInTopTwo;
+            backface-visibility: hidden;
+        }
+    }
+
+    .main-texts {
+        padding: 2rem;
+        width: 100%;
+        margin: 2rem auto;
+        border-radius: 10px;
+        line-height: 1.8;
+        font-size: 1rem;
+        font-family: "Segoe UI", sans-serif;
+        text-align: justify;
+        text-transform: capitalize;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.692);
+        animation-duration: 3s;
+        animation-name: moveInDown;
+        backface-visibility: hidden;
+    }
+
+    .container {
+        flex-direction: column;
+        /* بچینیم المان‌ها رو ستونی */
+        gap: 30px;
+        /* فاصله کمتر بین آیتم‌ها */
+        width: 90%;
+        /* تقریبا تمام عرض صفحه */
+        margin: 0 auto;
+    }
+
+    .bullet-texts {
+        width: 100%;
+        /* بزرگتر و قابل لمس روی موبایل */
+        height: 320px;
+        /* ارتفاع خودکار برای محتوا */
+        padding: 40px;
+        /* کمتر از حالت دسکتاپ */
+        font-size: 1.25rem;
+        /* متن کمی کوچکتر */
+        border-width: 6px;
+        /* ضخامت حاشیه کمتر */
+    }
+
+    .bullet-texts ul {
+        padding-left: 20px;
+        /* فاصله مناسب برای لیست */
+    }
+
+    .bullet-texts li {
+        margin-bottom: 10px;
+        /* فاصله بین آیتم‌ها */
+    }
+
+    .bg2 {
+        background-image: url('../images/2.png');
+
+        h2 {
+            display: inline-block;
+            text-align: center;
+            font-size: 2.5rem;
+            border-bottom: 4px solid white;
+            margin: 0 auto;
+            /* وسط‌چین کل h2 */
+        }
+    }
+
+    .people-one {
+        background-color: rgba(255, 255, 255, 0.418);
+        border: 10px solid white;
+        padding: 80px;
+        width: 100%;
+        height: 330px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-self: center;
+        align-items: center;
+        font-size: 1.25rem;
+        border-radius: 50%;
+        color: rgb(41, 41, 41);
+        margin-top: 150px;
+        gap: 30px;
+        opacity: 0;
+        transform: translateX(-100px);
+        transition: all 2s ease;
+        padding: 50px;
+    }
+
+    .people-two {
+        background-color: rgba(255, 255, 255, 0.418);
+        border: 10px solid white;
+        padding: 80px;
+        width: 100%;
+        height: 330px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-self: center;
+        align-items: center;
+        font-size: 1.25rem;
+        border-radius: 50%;
+        color: rgb(41, 41, 41);
+        margin-top: 150px;
+        gap: 30px;
+        opacity: 0;
+        transform: translateX(100px);
+        transition: all 2s ease;
+        padding: 50px;
+    }
+
+    .main-texts-management {
+        padding: 2rem;
+        width: 100%;
+        margin: 2rem auto;
+        border-radius: 10px;
+        line-height: 1.8;
+        font-size: 1rem;
+        font-family: "Segoe UI", sans-serif;
+        text-align: justify;
+        text-transform: capitalize;
+        font-weight: bold;
+        animation-duration: 3s;
+        animation-name: moveInDown;
+        backface-visibility: hidden;
+        margin-top: 100px;
+    }
+
+    .bg3 {
+        background-image: url('../images/3.png');
+
+        .title-container {
+            display: flex;
+            justify-content: flex-end;
+            opacity: 0;
+            transform: translateX(100px);
+            transition: all 3s ease;
+            padding: 50px;
+
+            padding: 5%;
+        }
+
+        .title-container.in-view {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        hr {
+            width: 100%;
+
+        }
+
+        strong {
+            font-weight: 200;
+        }
+
+        a {
+            text-decoration: none;
+            /* حذف خط زیر لینک */
+            color: #ffffff;
+            font-weight: 200;
+            font-weight: bold;
+            /* اختیاری: پررنگ */
+            transition: color 0.3s ease;
+            /* انیمیشن تغییر رنگ هنگام هاور */
+            cursor: pointer;
+        }
+
+        a:hover {
+            color: #ffcc00;
+            /* رنگ هنگام هاور */
+        }
+
+        h2 {
+            display: inline-block;
+            text-align: center;
+
+            font-size: 2rem;
+            border-bottom: 4px solid white;
+            color: white;
+            margin: 0;
+        }
+
+
+        .phonenumber,
+        .email,
+        .website {
+            width: 150%;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .location {
+            width: 160%;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .location-svg {
+            width: 120px;
+        }
+
+        .detail-form {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 70px;
+        }
+
+        .detail-form.in-view {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+}
+
+/* start responsive in mobiloe */
+@media screen and (min-width:577px) and (max-width:768px) {
+
+    /* title  */
+    .title-united-arab {
+        font-size: 3rem;
+        margin: 20px 0;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        display: flex;
+        flex-direction: row;
+        gap: 15px;
+        justify-content: flex-end;
+        text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+        animation-duration: 3s;
+        animation-name: moveInTop;
+        backface-visibility: hidden;
+
+        h2 {
+            font-size: 1.5rem;
+            margin: 10px 0;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-family: "Geologica", sans-serif;
+        }
+
+        .fi {
+            font-size: 2.75rem;
+            margin: 10px 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+    }
+
+    /* for main text  */
+    .movarekh-computers {
+        display: block;
+        text-align: center;
+        margin-top: 25px;
+        font-size: 1rem;
+        font-family: "Geologica", sans-serif;
+        animation-duration: 4s;
+        animation-name: moveInTopTwo;
+        backface-visibility: hidden;
+    }
+
+    /* each picture for background */
+    .bg1 {
+        background-image: url('../images/1.png');
+
+
+        hr {
+            width: 100%;
+            margin: 30px auto;
+            animation-duration: 4s;
+            animation-name: moveInTopTwo;
+            backface-visibility: hidden;
+        }
+    }
+
+    .main-texts {
+        padding: 2rem;
+        width: 80%;
+        margin: 2rem auto;
+        border-radius: 10px;
+        line-height: 1.8;
+        font-size: 1rem;
+        font-family: "Segoe UI", sans-serif;
+        text-align: justify;
+        text-transform: capitalize;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.692);
+        animation-duration: 3s;
+        animation-name: moveInDown;
+        backface-visibility: hidden;
+    }
+
+    .container {
+        flex-direction: column;
+        /* بچینیم المان‌ها رو ستونی */
+        gap: 30px;
+        /* فاصله کمتر بین آیتم‌ها */
+        width: 90%;
+        /* تقریبا تمام عرض صفحه */
+        margin: 0 auto;
+    }
+
+    .bullet-texts {
+        width: 50%;
+        /* بزرگتر و قابل لمس روی موبایل */
+        height: 350px;
+        /* ارتفاع خودکار برای محتوا */
+        padding: 40px;
+        /* کمتر از حالت دسکتاپ */
+        font-size: 1.25rem;
+        /* متن کمی کوچکتر */
+        border-width: 6px;
+        /* ضخامت حاشیه کمتر */
+    }
+
+    .bullet-texts ul {
+        padding-left: 20px;
+        /* فاصله مناسب برای لیست */
+    }
+
+    .bullet-texts li {
+        margin-bottom: 10px;
+        /* فاصله بین آیتم‌ها */
+    }
+
+    .bg2 {
+        background-image: url('../images/2.png');
+
+        h2 {
+            display: inline-block;
+            text-align: center;
+            font-size: 2.5rem;
+            border-bottom: 4px solid white;
+            margin: 0 auto;
+            /* وسط‌چین کل h2 */
+        }
+    }
+
+    .people-one {
+        background-color: rgba(255, 255, 255, 0.418);
+        border: 10px solid white;
+        padding: 80px;
+        width: 50%;
+        height: 350px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-self: center;
+        align-items: center;
+        font-size: 1.25rem;
+        border-radius: 50%;
+        color: rgb(41, 41, 41);
+        margin-top: 150px;
+        gap: 30px;
+        opacity: 0;
+        transform: translateX(-100px);
+        transition: all 2s ease;
+        padding: 50px;
+    }
+
+    .people-two {
+        background-color: rgba(255, 255, 255, 0.418);
+        border: 10px solid white;
+        padding: 80px;
+        width: 50%;
+        height: 350px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-self: center;
+        align-items: center;
+        font-size: 1.25rem;
+        border-radius: 50%;
+        color: rgb(41, 41, 41);
+        margin-top: 150px;
+        gap: 30px;
+        opacity: 0;
+        transform: translateX(100px);
+        transition: all 2s ease;
+        padding: 50px;
+    }
+
+    .main-texts-management {
+        padding: 2rem;
+        width: 80%;
+        margin: 2rem auto;
+        border-radius: 10px;
+        line-height: 1.8;
+        font-size: 1rem;
+        font-family: "Segoe UI", sans-serif;
+        text-align: justify;
+        text-transform: capitalize;
+        font-weight: bold;
+        animation-duration: 3s;
+        animation-name: moveInDown;
+        backface-visibility: hidden;
+        margin-top: 100px;
+    }
+
+    .bg3 {
+        background-image: url('../images/3.png');
+
+        .title-container {
+            display: flex;
+            justify-content: flex-end;
+            opacity: 0;
+            transform: translateX(100px);
+            transition: all 3s ease;
+            padding: 50px;
+
+            padding: 5%;
+        }
+
+        .title-container.in-view {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        hr {
+            width: 100%;
+
+        }
+
+        strong {
+            font-weight: 200;
+        }
+
+        a {
+            text-decoration: none;
+            /* حذف خط زیر لینک */
+            color: #ffffff;
+            font-weight: 200;
+            font-weight: bold;
+            /* اختیاری: پررنگ */
+            transition: color 0.3s ease;
+            /* انیمیشن تغییر رنگ هنگام هاور */
+            cursor: pointer;
+        }
+
+        a:hover {
+            color: #ffcc00;
+            /* رنگ هنگام هاور */
+        }
+
+        h2 {
+            display: inline-block;
+            text-align: center;
+
+            font-size: 2rem;
+            border-bottom: 4px solid white;
+            color: white;
+            margin: 0;
+        }
+
+
+        .phonenumber,
+        .email,
+        .website {
+            width: 110%;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .location {
+            width: 120%;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .location-svg {
+            width: 120px;
+        }
+
+        .detail-form {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 70px;
+        }
+
+        .detail-form.in-view {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+}
+
+
+/* start responsive in mobiloe */
+@media screen and (min-width:769px) and (max-width:992px) {
+
+    /* title  */
+    .title-united-arab {
+        font-size: 3rem;
+        margin: 20px 0;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        display: flex;
+        flex-direction: row;
+        gap: 15px;
+        justify-content: flex-end;
+        text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+        animation-duration: 3s;
+        animation-name: moveInTop;
+        backface-visibility: hidden;
+
+        h2 {
+            font-size: 1.5rem;
+            margin: 10px 0;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-family: "Geologica", sans-serif;
+        }
+
+        .fi {
+            font-size: 2.75rem;
+            margin: 10px 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+    }
+
+    /* for main text  */
+    .movarekh-computers {
+        display: block;
+        text-align: center;
+        margin-top: 25px;
+        font-size: 1rem;
+        font-family: "Geologica", sans-serif;
+        animation-duration: 4s;
+        animation-name: moveInTopTwo;
+        backface-visibility: hidden;
+    }
+
+    /* each picture for background */
+    .bg1 {
+        background-image: url('../images/1.png');
+
+
+        hr {
+            width: 100%;
+            margin: 30px auto;
+            animation-duration: 4s;
+            animation-name: moveInTopTwo;
+            backface-visibility: hidden;
+        }
+    }
+
+    .main-texts {
+        padding: 2rem;
+        width: 80%;
+        margin: 2rem auto;
+        border-radius: 10px;
+        line-height: 1.8;
+        font-size: 1rem;
+        font-family: "Segoe UI", sans-serif;
+        text-align: justify;
+        text-transform: capitalize;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.692);
+        animation-duration: 3s;
+        animation-name: moveInDown;
+        backface-visibility: hidden;
+    }
+
+    .container {
+        flex-direction: column;
+        /* بچینیم المان‌ها رو ستونی */
+        gap: 30px;
+        /* فاصله کمتر بین آیتم‌ها */
+        width: 90%;
+        /* تقریبا تمام عرض صفحه */
+        margin: 0 auto;
+    }
+
+    .bullet-texts {
+        width: 50%;
+        /* بزرگتر و قابل لمس روی موبایل */
+        height: 370px;
+        /* ارتفاع خودکار برای محتوا */
+        padding: 40px;
+        /* کمتر از حالت دسکتاپ */
+        font-size: 1.25rem;
+        /* متن کمی کوچکتر */
+        border-width: 6px;
+        /* ضخامت حاشیه کمتر */
+    }
+
+    .bullet-texts ul {
+        padding-left: 20px;
+        /* فاصله مناسب برای لیست */
+    }
+
+    .bullet-texts li {
+        margin-bottom: 10px;
+        /* فاصله بین آیتم‌ها */
+    }
+
+    .bg2 {
+        background-image: url('../images/2.png');
+
+        h2 {
+            display: inline-block;
+            text-align: center;
+            font-size: 2.5rem;
+            border-bottom: 4px solid white;
+            margin: 0 auto;
+            /* وسط‌چین کل h2 */
+        }
+    }
+
+    .people-one {
+        background-color: rgba(255, 255, 255, 0.418);
+        border: 10px solid white;
+        padding: 80px;
+        width: 50%;
+        height: 370px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-self: center;
+        align-items: center;
+        font-size: 1.25rem;
+        border-radius: 50%;
+        color: rgb(41, 41, 41);
+        margin-top: 150px;
+        gap: 30px;
+        opacity: 0;
+        transform: translateX(-100px);
+        transition: all 2s ease;
+        padding: 50px;
+    }
+
+    .people-two {
+        background-color: rgba(255, 255, 255, 0.418);
+        border: 10px solid white;
+        padding: 80px;
+        width: 50%;
+        height: 370px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-self: center;
+        align-items: center;
+        font-size: 1.25rem;
+        border-radius: 50%;
+        color: rgb(41, 41, 41);
+        margin-top: 150px;
+        gap: 30px;
+        opacity: 0;
+        transform: translateX(100px);
+        transition: all 2s ease;
+        padding: 50px;
+    }
+
+    .main-texts-management {
+        padding: 2rem;
+        width: 80%;
+        margin: 2rem auto;
+        border-radius: 10px;
+        line-height: 1.8;
+        font-size: 1rem;
+        font-family: "Segoe UI", sans-serif;
+        text-align: justify;
+        text-transform: capitalize;
+        font-weight: bold;
+        animation-duration: 3s;
+        animation-name: moveInDown;
+        backface-visibility: hidden;
+        margin-top: 100px;
+    }
+
+    .bg3 {
+        background-image: url('../images/3.png');
+
+        .title-container {
+            display: flex;
+            justify-content: flex-end;
+            opacity: 0;
+            transform: translateX(100px);
+            transition: all 3s ease;
+            padding: 50px;
+
+            padding: 5%;
+        }
+
+        .title-container.in-view {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        hr {
+            width: 100%;
+
+        }
+
+        strong {
+            font-weight: 200;
+        }
+
+        a {
+            text-decoration: none;
+            /* حذف خط زیر لینک */
+            color: #ffffff;
+            font-weight: 200;
+            font-weight: bold;
+            /* اختیاری: پررنگ */
+            transition: color 0.3s ease;
+            /* انیمیشن تغییر رنگ هنگام هاور */
+            cursor: pointer;
+        }
+
+        a:hover {
+            color: #ffcc00;
+            /* رنگ هنگام هاور */
+        }
+
+        h2 {
+            display: inline-block;
+            text-align: center;
+
+            font-size: 2rem;
+            border-bottom: 4px solid white;
+            color: white;
+            margin: 0;
+        }
+
+
+        .phonenumber,
+        .email,
+        .website {
+            width: 110%;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .location {
+            width: 120%;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .location-svg {
+            width: 120px;
+        }
+
+        .detail-form {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 70px;
+        }
+
+        .detail-form.in-view {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+}
+
+/* start responsive in mobiloe */
+
+
+@media screen and (min-width:993px) and (max-width:1200px) {
+
+    /* title  */
+    .title-united-arab {
+        font-size: 3rem;
+        margin: 20px 0;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        display: flex;
+        flex-direction: row;
+        gap: 15px;
+        justify-content: flex-end;
+        text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+        animation-duration: 3s;
+        animation-name: moveInTop;
+        backface-visibility: hidden;
+
+        h2 {
+            font-size: 1.5rem;
+            margin: 10px 0;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-family: "Geologica", sans-serif;
+        }
+
+        .fi {
+            font-size: 2.75rem;
+            margin: 10px 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+    }
+
+    /* for main text  */
+    .movarekh-computers {
+        display: block;
+        text-align: center;
+        margin-top: 25px;
+        font-size: 1rem;
+        font-family: "Geologica", sans-serif;
+        animation-duration: 4s;
+        animation-name: moveInTopTwo;
+        backface-visibility: hidden;
+    }
+
+    /* each picture for background */
+    .bg1 {
+        background-image: url('../images/1.png');
+
+
+        hr {
+            width: 100%;
+            margin: 30px auto;
+            animation-duration: 4s;
+            animation-name: moveInTopTwo;
+            backface-visibility: hidden;
+        }
+    }
+
+    .main-texts {
+        padding: 2rem;
+        width: 80%;
+        margin: 2rem auto;
+        border-radius: 10px;
+        line-height: 1.8;
+        font-size: 1rem;
+        font-family: "Segoe UI", sans-serif;
+        text-align: justify;
+        text-transform: capitalize;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.692);
+        animation-duration: 3s;
+        animation-name: moveInDown;
+        backface-visibility: hidden;
+    }
+
+    .container {
+        flex-direction: column;
+        /* بچینیم المان‌ها رو ستونی */
+        gap: 30px;
+        /* فاصله کمتر بین آیتم‌ها */
+        width: 90%;
+        /* تقریبا تمام عرض صفحه */
+        margin: 0 auto;
+    }
+
+    .bullet-texts {
+        width: 40%;
+        /* بزرگتر و قابل لمس روی موبایل */
+        height: 400px;
+        /* ارتفاع خودکار برای محتوا */
+        padding: 40px;
+        /* کمتر از حالت دسکتاپ */
+        font-size: 1.5rem;
+        /* متن کمی کوچکتر */
+        border-width: 6px;
+        /* ضخامت حاشیه کمتر */
+    }
+
+    .bullet-texts ul {
+        padding-left: 20px;
+        /* فاصله مناسب برای لیست */
+    }
+
+    .bullet-texts li {
+        margin-bottom: 10px;
+        /* فاصله بین آیتم‌ها */
+    }
+
+    .bg2 {
+        background-image: url('../images/2.png');
+
+        h2 {
+            display: inline-block;
+            text-align: center;
+            font-size: 2.5rem;
+            border-bottom: 4px solid white;
+            margin: 0 auto;
+            /* وسط‌چین کل h2 */
+        }
+    }
+
+    .people-one {
+        background-color: rgba(255, 255, 255, 0.418);
+        border: 10px solid white;
+        padding: 80px;
+        width: 40%;
+        height: 400px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-self: center;
+        align-items: center;
+        font-size: 1.25rem;
+        border-radius: 50%;
+        color: rgb(41, 41, 41);
+        margin-top: 150px;
+        gap: 30px;
+        opacity: 0;
+        transform: translateX(-100px);
+        transition: all 2s ease;
+        padding: 50px;
+    }
+
+    .people-two {
+        background-color: rgba(255, 255, 255, 0.418);
+        border: 10px solid white;
+        padding: 80px;
+        width: 40%;
+        height: 400px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-self: center;
+        align-items: center;
+        font-size: 1.25rem;
+        border-radius: 50%;
+        color: rgb(41, 41, 41);
+        margin-top: 150px;
+        gap: 30px;
+        opacity: 0;
+        transform: translateX(100px);
+        transition: all 2s ease;
+        padding: 50px;
+    }
+
+    .main-texts-management {
+        padding: 2rem;
+        width: 80%;
+        margin: 2rem auto;
+        border-radius: 10px;
+        line-height: 1.8;
+        font-size: 1rem;
+        font-family: "Segoe UI", sans-serif;
+        text-align: justify;
+        text-transform: capitalize;
+        font-weight: bold;
+        animation-duration: 3s;
+        animation-name: moveInDown;
+        backface-visibility: hidden;
+        margin-top: 100px;
+    }
+
+    .bg3 {
+        background-image: url('../images/3.png');
+
+        .title-container {
+            display: flex;
+            justify-content: flex-end;
+            opacity: 0;
+            transform: translateX(100px);
+            transition: all 3s ease;
+            padding: 50px;
+
+            padding: 5%;
+        }
+
+        .title-container.in-view {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        hr {
+            width: 100%;
+
+        }
+
+        strong {
+            font-weight: 200;
+        }
+
+        a {
+            text-decoration: none;
+            /* حذف خط زیر لینک */
+            color: #ffffff;
+            font-weight: 200;
+            font-weight: bold;
+            /* اختیاری: پررنگ */
+            transition: color 0.3s ease;
+            /* انیمیشن تغییر رنگ هنگام هاور */
+            cursor: pointer;
+        }
+
+        a:hover {
+            color: #ffcc00;
+            /* رنگ هنگام هاور */
+        }
+
+        h2 {
+            display: inline-block;
+            text-align: center;
+
+            font-size: 2rem;
+            border-bottom: 4px solid white;
+            color: white;
+            margin-right: 120px;
+        }
+
+
+        .phonenumber,
+        .email,
+        .website {
+            width: 110%;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .location {
+            width: 118%;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .location-svg {
+            width: 120px;
+        }
+
+        .detail-form {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 70px;
+        }
+
+        .detail-form.in-view {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+}
+
+@media screen and (min-width:1201px) and (max-width:1700px) {
+
+    /* title  */
+    .title-united-arab {
+        font-size: 3rem;
+        margin: 20px 0;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        display: flex;
+        flex-direction: row;
+        gap: 15px;
+        justify-content: flex-end;
+        text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+        animation-duration: 3s;
+        animation-name: moveInTop;
+        backface-visibility: hidden;
+
+        h2 {
+            font-size: 1.5rem;
+            margin: 10px 0;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-family: "Geologica", sans-serif;
+        }
+
+        .fi {
+            font-size: 2.75rem;
+            margin: 10px 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+    }
+
+    /* for main text  */
+    .movarekh-computers {
+        display: block;
+        text-align: center;
+        margin-top: 25px;
+        font-size: 1.5rem;
+        font-family: "Geologica", sans-serif;
+        animation-duration: 4s;
+        animation-name: moveInTopTwo;
+        backface-visibility: hidden;
+    }
+
+    /* each picture for background */
+    .bg1 {
+        background-image: url('../images/1.png');
+
+
+        hr {
+            width: 100%;
+            margin: 30px auto;
+            animation-duration: 4s;
+            animation-name: moveInTopTwo;
+            backface-visibility: hidden;
+        }
+    }
+
+    .main-texts {
+        padding: 2rem;
+        width: 80%;
+        margin: 2rem auto;
+        border-radius: 10px;
+        line-height: 1.8;
+        font-size: 1.5rem;
+        font-family: "Segoe UI", sans-serif;
+        text-align: justify;
+        text-transform: capitalize;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.692);
+        animation-duration: 3s;
+        animation-name: moveInDown;
+        backface-visibility: hidden;
+    }
+
+    .container {
+        flex-direction: column;
+        /* بچینیم المان‌ها رو ستونی */
+        gap: 30px;
+        /* فاصله کمتر بین آیتم‌ها */
+        width: 90%;
+        /* تقریبا تمام عرض صفحه */
+        margin: 0 auto;
+    }
+
+    .bullet-texts {
+        width: 40%;
+        /* بزرگتر و قابل لمس روی موبایل */
+        height: 450px;
+        /* ارتفاع خودکار برای محتوا */
+        padding: 40px;
+        /* کمتر از حالت دسکتاپ */
+        font-size: 1.5rem;
+        /* متن کمی کوچکتر */
+        border-width: 6px;
+        /* ضخامت حاشیه کمتر */
+    }
+
+    .bullet-texts ul {
+        padding-left: 20px;
+        /* فاصله مناسب برای لیست */
+    }
+
+    .bullet-texts li {
+        margin-bottom: 10px;
+        /* فاصله بین آیتم‌ها */
+    }
+
+    .bg2 {
+        background-image: url('../images/2.png');
+
+        h2 {
+            display: inline-block;
+            text-align: center;
+            font-size: 2.5rem;
+            border-bottom: 4px solid white;
+            margin: 0 auto;
+            /* وسط‌چین کل h2 */
+        }
+    }
+
+    .people-one {
+        background-color: rgba(255, 255, 255, 0.418);
+        border: 10px solid white;
+        padding: 80px;
+        width: 40%;
+        height: 450px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-self: center;
+        align-items: center;
+        font-size: 1.25rem;
+        border-radius: 50%;
+        color: rgb(41, 41, 41);
+        margin-top: 150px;
+        gap: 30px;
+        opacity: 0;
+        transform: translateX(-100px);
+        transition: all 2s ease;
+        padding: 50px;
+    }
+
+    .people-two {
+        background-color: rgba(255, 255, 255, 0.418);
+        border: 10px solid white;
+        padding: 80px;
+        width: 40%;
+        height: 450px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-self: center;
+        align-items: center;
+        font-size: 1.25rem;
+        border-radius: 50%;
+        color: rgb(41, 41, 41);
+        margin-top: 150px;
+        gap: 30px;
+        opacity: 0;
+        transform: translateX(100px);
+        transition: all 2s ease;
+        padding: 50px;
+    }
+
+    .main-texts-management {
+        padding: 2rem;
+        width: 80%;
+        margin: 2rem auto;
+        border-radius: 10px;
+        line-height: 1.8;
+        font-size: 1.5rem;
+        font-family: "Segoe UI", sans-serif;
+        text-align: justify;
+        text-transform: capitalize;
+        font-weight: bold;
+        animation-duration: 3s;
+        animation-name: moveInDown;
+        backface-visibility: hidden;
+        margin-top: 100px;
+    }
+
+    .bg3 {
+        background-image: url('../images/3.png');
+
+        .title-container {
+            display: flex;
+            justify-content: flex-end;
+            opacity: 0;
+            transform: translateX(100px);
+            transition: all 3s ease;
+            padding: 50px;
+
+            padding: 5%;
+        }
+
+        .title-container.in-view {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        hr {
+            width: 100%;
+
+        }
+
+        strong {
+            font-weight: 200;
+        }
+
+        a {
+            text-decoration: none;
+            /* حذف خط زیر لینک */
+            color: #ffffff;
+            font-weight: 200;
+            font-weight: bold;
+            /* اختیاری: پررنگ */
+            transition: color 0.3s ease;
+            /* انیمیشن تغییر رنگ هنگام هاور */
+            cursor: pointer;
+        }
+
+        a:hover {
+            color: #ffcc00;
+            /* رنگ هنگام هاور */
+        }
+
+        h2 {
+            display: inline-block;
+            text-align: center;
+
+            font-size: 2.5rem;
+            border-bottom: 4px solid white;
+            color: white;
+            margin-right: 120px;
+        }
+
+        .location,
+        .phonenumber,
+        .email,
+        .website {
+            width: 100%;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+
+
+
+        .detail-form {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 70px;
+        }
+
+        .detail-form.in-view {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
 }
