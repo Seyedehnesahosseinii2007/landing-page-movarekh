@@ -821,7 +821,7 @@ section {
     .bullet-texts {
         width: 50%;
         /* بزرگتر و قابل لمس روی موبایل */
-        height: 300px;
+        height: 310px;
         /* ارتفاع خودکار برای محتوا */
         padding: 40px;
         /* کمتر از حالت دسکتاپ */
@@ -1129,7 +1129,7 @@ section {
     .bullet-texts {
         width: 50%;
         /* بزرگتر و قابل لمس روی موبایل */
-        height: 390px;
+        height: 350px;
         /* ارتفاع خودکار برای محتوا */
         padding: 40px;
         /* کمتر از حالت دسکتاپ */
@@ -1167,7 +1167,7 @@ section {
         border: 10px solid white;
         padding: 80px;
         width: 50%;
-        height: 390px;
+        height: 360px;
         display: flex;
         justify-content: center;
         flex-direction: column;
@@ -1189,7 +1189,7 @@ section {
         border: 10px solid white;
         padding: 80px;
         width: 50%;
-        height: 390px;
+        height: 360px;
         display: flex;
         justify-content: center;
         flex-direction: column;
@@ -1476,7 +1476,7 @@ section {
         border: 10px solid white;
         padding: 80px;
         width: 40%;
-        height: 400px;
+        height: 360px;
         display: flex;
         justify-content: center;
         flex-direction: column;
@@ -1498,7 +1498,7 @@ section {
         border: 10px solid white;
         padding: 80px;
         width: 40%;
-        height: 400px;
+        height: 360px;
         display: flex;
         justify-content: center;
         flex-direction: column;
